@@ -15,7 +15,7 @@ public class FancyChatBot extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // চ্যাট এলাকা প্যানেল
+
         chatPanel = new JPanel();
         chatPanel.setLayout(new BoxLayout(chatPanel, BoxLayout.Y_AXIS));
         chatPanel.setBackground(new Color(30, 30, 30));
@@ -24,7 +24,7 @@ public class FancyChatBot extends JFrame {
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         add(scrollPane, BorderLayout.CENTER);
 
-        // ইনপুট প্যানেল
+
         JPanel inputPanel = new JPanel(new BorderLayout());
         chatField = new JTextField();
         chatField.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -41,12 +41,12 @@ public class FancyChatBot extends JFrame {
         inputPanel.add(sendButton, BorderLayout.EAST);
         add(inputPanel, BorderLayout.SOUTH);
 
-        // Send action
+
         ActionListener sendAction = e -> sendMessage();
         sendButton.addActionListener(sendAction);
-        chatField.addActionListener(sendAction); // Enter key
+        chatField.addActionListener(sendAction); 
 
-        // স্বাগতম মেসেজ
+
         addBotMessage("হ্যালো! আমি তোমার চ্যাটবট। কেমন আছো?");
 
         setVisible(true);
@@ -122,4 +122,5 @@ public class FancyChatBot extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(FancyChatBot::new);
     }
+
 }
